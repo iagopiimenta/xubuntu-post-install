@@ -171,13 +171,14 @@ export PS1=$IBlack$Time24h$Color_Off'$(git branch &>/dev/null;\
 if [ $? -eq 0 ]; then \
   echo "$(echo `git status` | grep "nothing to commit" > /dev/null 2>&1; \
   git_status=$?
+  git_hash=$(git rev-parse --short HEAD)
   echo " '$BYellow$PathShort$Color_Off'"
   if [ $git_status -eq "0" ]; then \
     # @4 - Clean repository - nothing to commit
-    echo "'$Green'"$(__git_ps1 "(%s)"); \
+    echo "'$Green'"$(__git_ps1 "($git_hash %s)"); \
   else \
     # @5 - Changes to working tree
-    echo "'$IRed'"$(__git_ps1 "{%s}"); \
+    echo "'$IRed'"$(__git_ps1 "{$git_hash %s}"); \
   fi) '$Color_Off'\$ "; \
 else \
   # @2 - Prompt when not in GIT repo
