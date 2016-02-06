@@ -10,8 +10,7 @@ function dpkg_install {
   package_path=$(which $1)
   if ((${#package_path} > 4))
   then
-    # return  
-    echo 'fooo'
+    return
   fi
 
   # 64bit
@@ -22,10 +21,8 @@ function dpkg_install {
     url=$3
   fi
 
-  echo $url
-
   package_file="$1.deb"
   wget -c $url -qO $package_file
   sudo dpkg -i $package_file
-  # rm -f $package_file
+  rm -f $package_file
 }

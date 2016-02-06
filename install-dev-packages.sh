@@ -9,7 +9,7 @@ install Vim vim
 install Git git
 
 # https://github.com/rbenv/ruby-build/wiki
-install 'ruby-build dependencies' autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev libssl-dev libreadline-dev
+install 'build dependencies' autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev libssl-dev libreadline-dev debconf-utils
 
 install 'useful dependencies(nokogiri, sqlite, ssl)' curl libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libxml2 libgmp-dev zlib1g-dev liblzma-dev
 
@@ -29,10 +29,14 @@ install SQLite sqlite3 libsqlite3-dev
 
 install memcached memcached
 
+sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
+sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
 install MySQL mysql-server libmysqlclient-dev
 
 # echo 'Installing standalone ruby'
 # sudo apt-get -y install ruby2.0 ruby2.0-dev
+
+echo 'Installing rbenv and ruby'
 
 rbenv_folder="$HOME/.rbenv"
 if [ ! -d $rbenv_folder ];

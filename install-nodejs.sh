@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo 'Installing NVM'
+echo 'Installing Nodejs using NVM'
 
 node_path=$(which node)
 if ((${#node_path} > 4))

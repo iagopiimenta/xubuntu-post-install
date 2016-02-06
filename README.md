@@ -7,7 +7,17 @@ Feel free to copy, improve and distribute.
 
 ## What it provides me
 
-- Dropbox, Sublime text 3, Vim, Git(last version), Ruby(dependencies, rbenv, ruby-build, rbenv-update), Tmux & Tmuxinator, Openvpn, Mongodb 3, Redis(last version), SpamAssassin, sshpass, ImageMagick & GraphicsMagick, Google Chrome, OpenJDK 8, Vlc, Gimp, Rar, Skype, Spotify, Transmission, (x)ubuntu-restricted-extras, Vagrant, VrtualBox, PostgreSQL, SQLite, MySQL, memchaced, codecs
+- Dropbox, Sublime text 3, Vim, Git(last version), Tmux & Tmuxinator, ImageMagick & GraphicsMagick, Google Chrome, OpenJDK 8, Vlc, Gimp, Rar, Skype, Spotify, Transmission, (x)ubuntu-restricted-extras, codecs.
+
+- Mongodb 3, Redis(last version), PostgreSQL, SQLite, MySQL, memchaced
+
+- VirtualBox, Vagrant
+
+- Nodejs(nvm)
+
+- Ruby(dependencies, rbenv, ruby-build, rbenv-update)
+
+- Openvpn, SpamAssassin, sshpass
 
 - [Rotate](https://github.com/iagopiimenta/xubuntu-post-install/blob/master/templates/my_bashrc#L33) ~/.bash_history* to Dropbox folder `~/Dropbox/machine-backups/$(hostname)/bash_histories`
 

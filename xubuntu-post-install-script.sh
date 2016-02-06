@@ -5,7 +5,6 @@
 sudo apt-get > /dev/null
 
 source ./functions.sh
-source ./install-vagrant.sh
 source ./setup-repositories.sh
 source ./update-system.sh
 
@@ -13,6 +12,8 @@ source ./install-personal-packages.sh
 source ./install-dev-packages.sh
 source ./install-google-chrome.sh
 source ./install-vagrant.sh
+source ./install-dropbox.sh
+source ./install-nodejs.sh
 source ./install-templates.sh
 
 echo "Cleaning Up"
