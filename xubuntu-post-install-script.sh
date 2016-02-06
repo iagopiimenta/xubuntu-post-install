@@ -23,6 +23,12 @@ then
   source ./install-google-chrome.sh
 fi
 
+vagrant_path=$(which vagrant)
+if ((${#vagrant_path} < 4))
+then
+  source ./install-vagrant.sh
+fi
+
 cp ./templates/my_bashrc "$HOME/.my_bashrc"
 cp ./templates/tmux.conf "$HOME/.tmux.conf"
 sed -i '/source \$HOME\/\.my_bashrc/d' ~/.bashrc
@@ -43,4 +49,8 @@ echo -e '\nConfigure git:'
 echo '  git config --global user.email your@email.com'
 echo '  git config --global user.name "Your name"'
 echo '  ssh-keygen # yes to all'
-echo -e '\ncat ~/.ssh/id_rsa.pub # your public key, put on github/bitbucket\n'
+echo -e '\ncat ~/.ssh/id_rsa.pub # your public key, put on github/bitbucket'
+echo -e "\nAdd vagrant box:"
+echo -e "  vagrant box add ubuntu/trusty$(getconf LONG_BIT)"
+echo -e "\nInstall Dropbox:"
+echo -e "  dropbox start -i\n"

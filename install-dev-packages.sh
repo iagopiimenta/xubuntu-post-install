@@ -21,6 +21,10 @@ install 'Mongodb 3' mongodb-org
 
 install 'imagemagick & graphicsmagick' imagemagick graphicsmagick
 
+install PostgreSQL postgresql postgresql-contrib libpq-dev
+
+install VirtualBox virtualbox-5.0 dkms
+
 # echo 'Installing standalone ruby'
 # sudo apt-get -y install ruby2.0 ruby2.0-dev
 

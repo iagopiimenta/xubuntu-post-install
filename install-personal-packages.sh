@@ -8,6 +8,8 @@ install 'Essentials programs(vlc gimp rar skype spotify-client transmission)' vl
 # See ./add-repositories.sh
 install 'OpenJDK - Java 8' openjdk-8-jdk openjdk-8-jre
 
+install 'Codecs' ffmpeg gstreamer0.10-ffmpeg libav-tools
+
 echo 'Installing Dropbox'
 dropbox_path=$(which dropbox)
 
