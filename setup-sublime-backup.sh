@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo 'Setting Sublime to use Dropbox'
+
 # See https://packagecontrol.io/docs/syncing#dropbox-linux
 if [ ! -d $HOME/.config/sublime-text-3/Packages/User ]
 then

@@ -4,35 +4,16 @@
 # [ "$UID" -eq 0 ] || exec sudo bash "$0" "$@"
 sudo apt-get > /dev/null
 
-function install {
-  echo Installing $1
-  shift
-  sudo apt-get -y install "$@" >/dev/null 2>&1
-}
-
-# sudo add-apt-repository main
+source ./functions.sh
+source ./install-vagrant.sh
 source ./setup-repositories.sh
 source ./update-system.sh
 
 source ./install-personal-packages.sh
 source ./install-dev-packages.sh
-
-chrome_path=$(which google-chrome)
-if ((${#chrome_path} < 4))
-then
-  source ./install-google-chrome.sh
-fi
-
-vagrant_path=$(which vagrant)
-if ((${#vagrant_path} < 4))
-then
-  source ./install-vagrant.sh
-fi
-
-cp ./templates/my_bashrc "$HOME/.my_bashrc"
-cp ./templates/tmux.conf "$HOME/.tmux.conf"
-sed -i '/source \$HOME\/\.my_bashrc/d' ~/.bashrc
-echo 'source $HOME/.my_bashrc' >> ~/.bashrc
+source ./install-google-chrome.sh
+source ./install-vagrant.sh
+source ./install-templates.sh
 
 echo "Cleaning Up"
 sudo apt-get -qq -f install

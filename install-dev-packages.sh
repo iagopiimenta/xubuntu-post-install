@@ -25,6 +25,12 @@ install PostgreSQL postgresql postgresql-contrib libpq-dev
 
 install VirtualBox virtualbox-5.0 dkms
 
+install SQLite sqlite3 libsqlite3-dev
+
+install memcached memcached
+
+install MySQL mysql-server libmysqlclient-dev
+
 # echo 'Installing standalone ruby'
 # sudo apt-get -y install ruby2.0 ruby2.0-dev
 
@@ -54,7 +60,6 @@ fi
 install tmux tmux
 
 tmuxinator_path=$(which tmuxinator)
-
 if ((${#tmuxinator_path} < 4))
 then
   echo 'Installing tmuxinator'
