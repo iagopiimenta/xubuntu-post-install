@@ -13,25 +13,25 @@ install 'build dependencies' autoconf bison build-essential libssl-dev libyaml-d
 
 install 'useful dependencies(nokogiri, sqlite, ssl)' curl libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libxml2 libgmp-dev zlib1g-dev liblzma-dev
 
-install 'my projects dependencies(charlock_holmes, ldap, spamassassin, sshpass)' libicu-dev libldap2-dev libsasl2-dev spamassassin sshpass
+# install 'my projects dependencies(charlock_holmes, ldap, spamassassin, sshpass)' libicu-dev libldap2-dev libsasl2-dev spamassassin sshpass
 
-install Redis redis-server
+# install Redis redis-server
 
-install 'Mongodb 3' mongodb-org
+# install 'Mongodb 3' mongodb-org
 
 install 'imagemagick & graphicsmagick' imagemagick graphicsmagick
 
-install PostgreSQL postgresql postgresql-contrib libpq-dev
+# install PostgreSQL postgresql postgresql-contrib libpq-dev
 
-install VirtualBox virtualbox-5.0 dkms
+# install VirtualBox virtualbox-5.0 dkms
 
-install SQLite sqlite3 libsqlite3-dev
+# install SQLite sqlite3 libsqlite3-dev
 
-install memcached memcached
+# install memcached memcached
 
-sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
-sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
-install MySQL mysql-server libmysqlclient-dev
+# sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
+# sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
+# install MySQL mysql-server libmysqlclient-dev
 
 # echo 'Installing standalone ruby'
 # sudo apt-get -y install ruby2.0 ruby2.0-dev
@@ -61,13 +61,13 @@ then
   git clone https://github.com/rbenv/ruby-build.git $rbuild_folder
 fi
 
-install tmux tmux
+# install tmux tmux
 
-tmuxinator_path=$(which tmuxinator)
-if ((${#tmuxinator_path} < 4))
-then
-  echo 'Installing tmuxinator'
-  sudo gem install tmuxinator
-fi
+# tmuxinator_path=$(which tmuxinator)
+# if ((${#tmuxinator_path} < 4))
+# then
+#  echo 'Installing tmuxinator'
+#  sudo gem install tmuxinator
+# fi
 
-install OpenVPN openvpn easy-rsa lzop
+# install OpenVPN openvpn easy-rsa lzop

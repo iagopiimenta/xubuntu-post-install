@@ -19,5 +19,5 @@ then
     mkdir -p $HOME/Dropbox/Sublime/User
   fi
 
-  ln -s $HOME/.config/sublime-text-3/Packages/User $HOME/Dropbox/Sublime/User
+  ln -s $HOME/Dropbox/Sublime/User $HOME/.config/sublime-text-3/Packages/User
 fi

@@ -2,13 +2,26 @@
 
 echo 'Installing Dropbox'
 
-sudo apt-get -y install python-gpgme >/dev/null 2>&1
+sudo apt-get -y install python-gpgme
 
+dropbox_path=$(which dropbox)
 if ((${#dropbox_path} > 4))
 then
   return
 fi
 
-dpkg_install dropbox 'https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb' \
-                     'https://dl.google.com/linux/direct/google-chrome-stable_current_i386.deb'
+url=$2
+if [[ $(getconf LONG_BIT) != "64" ]]
+then
+  wget -O - "https://www.dropbox.com/download?plat=lnx.x86" | tar xzf - -C ~/
+else
+  wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf - -C ~/
+fi
 
+# rm -r ~/Documents/
+# ln -s ~/Dropbox/machine/Documents/ ~/Documents
+
+# rm -r ~/Pictures/
+# ln -s ~/Dropbox/machine/Pictures/ ~/Pictures
+
+~/.dropbox-dist/dropboxd &

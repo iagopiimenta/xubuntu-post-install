@@ -3,7 +3,7 @@
 function install {
   echo Installing $1
   shift
-  sudo apt-get -y install "$@" >/dev/null 2>&1
+  sudo apt-get -y install "$@"
 }
 
 function dpkg_install {

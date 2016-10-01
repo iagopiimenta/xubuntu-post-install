@@ -11,7 +11,7 @@ source ./update-system.sh
 source ./install-personal-packages.sh
 source ./install-dev-packages.sh
 source ./install-google-chrome.sh
-source ./install-vagrant.sh
+source ./install-docker.sh
 source ./install-dropbox.sh
 source ./install-nodejs.sh
 source ./install-templates.sh

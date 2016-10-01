@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo 'Installing Nodejs using NVM'
+echo 'Installing Nodejs using tj/n'
 
 node_path=$(which node)
 if ((${#node_path} > 4))
@@ -8,13 +8,8 @@ then
   return
 fi
 
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | bash
+curl -L https://git.io/n-install | bash
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
 
-# update nvm
-# git --git-dir=$HOME/.nvm/.git --work-tree=$HOME/.nvm pull
-
-nvm install node
-nvm alias default node
+n lts
